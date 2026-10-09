@@ -16,11 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build PDF (XeLaTeX)
+      - name: Build PDF
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          compiler: xelatex
           latexmk_use_xelatex: true
 
       - name: Upload PDF
