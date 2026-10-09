@@ -1,19 +1,14 @@
 ﻿\documentclass[a4paper,12pt]{extarticle}
-
-% Базовые пакеты
-\usepackage{fontspec}          % Обязательно для XeLaTeX
-\setmainfont{Times New Roman}  % Или TeX Gyre Termes, если Times нет в системе Ubuntu
-\setmonofont{Courier New}
-
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[english,main=russian]{babel}
+\usepackage{times} % Даст Times-подобный шрифт в pdfLaTeX
 \usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{indentfirst}
+\usepackage{xurl}
+\usepackage{tabularx}
 \usepackage{amsmath}
-\usepackage{underscore}
-\usepackage{graphicx}
-\usepackage{hyperref} % Для ссылок
-\usepackage{tabularx} % Для таблиц
-\usepackage{xcolor}   % Для простых цветов
+\usepackage{hyperref}
 
 % Настройки
 \setlength{\parindent}{1.25cm}
