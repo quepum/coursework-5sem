@@ -1,0 +1,32 @@
+﻿name: build-pdf
+
+# Собирает PDF при push в main, в любом PR и вручную (Run workflow).
+# Готовый PDF: вкладка Actions → последний запуск → Artifacts → report-pdf.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build PDF (XeLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          compiler: xelatex
+          latexmk_use_xelatex: true
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-pdf
+          path: main.pdf
+          if-no-files-found: error
+          retention-days: 90
