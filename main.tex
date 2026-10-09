@@ -1,8 +1,10 @@
 ﻿\documentclass[a4paper,12pt]{extarticle}
 
 % Базовые пакеты
-\usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
+\usepackage{fontspec}          % Обязательно для XeLaTeX
+\setmainfont{Times New Roman}  % Или TeX Gyre Termes, если Times нет в системе Ubuntu
+\setmonofont{Courier New}
+
 \usepackage[english,main=russian]{babel}
 \usepackage[left=30mm,right=15mm,top=20mm,bottom=20mm]{geometry}
 \usepackage{indentfirst}
