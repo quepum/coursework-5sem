@@ -1,58 +1,46 @@
-% !TeX program = xelatex
-% ============================================================
-%  1. НАЗВАНИЕ РАБОТЫ И АННОТАЦИЯ
-% ============================================================
-
-% ---------- титульный лист ----------
+% Титульный лист
 \thispagestyle{empty}
 \begin{center}
-{\small\MakeUppercase{\UniversityName}}\\[2pt]
-{\small\MakeUppercase{\FacultyName}}\\[2pt]
-{\small\MakeUppercase{\DepartmentName}}
+    \small \MakeUppercase{\UniversityName}\\
+    \small \MakeUppercase{\FacultyName}\\
+    \small \MakeUppercase{\DepartmentName}
 \end{center}
 
-\vspace{1.2cm}
+\vspace{1.5cm}
 
 \begin{center}
-{\large\bfseries ОТЧЁТ ПО КУРСОВОЙ РАБОТЕ}\\[0.5em]
-{\normalsize за период: \ReportPeriod}\\[0.3em]
-{\normalsize дата: \ReportDate}
+    \large \textbf{ОТЧЁТ ПО КУРСОВОЙ РАБОТЕ}\\
+    \normalsize за период: \ReportPeriod\\
+    \normalsize дата: \ReportDate
 \end{center}
 
 \vfill
 
 \begin{center}
-{\Large\bfseries\WorkTitle}
+    \Large \textbf{\WorkTitle}
 \end{center}
 
 \vfill
 
-\begingroup
-\setlength{\parindent}{0pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.6cm} X@{}}
-Выполнил:             & студент группы \StudentGroup{} \StudentName \\
-Научный руководитель: & \SupervisorTitle{} \SupervisorName \\
-Работа выполняется:   & 2026/2027 учебный год (5--6 семестры) \\
-Репозиторий отчётов:  & \texttt{\ReportsRepoUrl} \\
-Репозитории с кодом:  & \texttt{github.com/PySATL/pysatl-experiment},
-                        \texttt{github.com/PySATL/pysatl-criterion} \\
+\noindent
+\begin{tabularx}{\textwidth}{l X}
+    Выполнил:             & студент группы \StudentGroup{} \StudentName \\
+    Научный руководитель: & \SupervisorTitle{} \SupervisorName \\
+    Работа выполняется:   & 2026/2027 учебный год (5--6 семестры) \\
+    Репозиторий отчётов:  & \texttt{\ReportsRepoUrl} \\
 \end{tabularx}
-\endgroup
 
 \vfill
 
 \begin{center}
-\CityName{}\\ \the\year{} г.
+    \CityName, \the\year{} г.
 \end{center}
 
 \clearpage
 
-% ---------- аннотация ----------
+% Аннотация
 \section*{Аннотация}
-\addcontentsline{toc}{section}{Аннотация}
 
-Проект PySATL автоматизирует статистические эксперименты над критериями согласия.
 Библиотека \texttt{pysatl-criterion} реализует порядка 235 критериев для 16 семейств
 распределений, а \texttt{pysatl-experiment} предоставляет фреймворк Monte-Carlo
 экспериментов: сегодня в нём доступны типы \texttt{critical\_value}, \texttt{power},
@@ -72,7 +60,7 @@
 
 Поскольку большинство критериев библиотеки основано на статистиках с невырожденным предельным распределением,
 точный наклон Бахадура для них не определён, поэтому применяется приближённый наклон. Реализация ведётся на
-Python $\geqslant$ 3.10 с использованием NumPy, SciPy, SQLAlchemy; данные хранятся в
+Python $\geq$ 3.10 с использованием NumPy, SciPy, SQLAlchemy; данные хранятся в
 SQLite или PostgreSQL, вычисления распараллеливаются. Погрешность оценок количественно оценивается,
 корректность подтверждается сопоставлением с аналитическими значениями.
 
@@ -81,3 +69,5 @@ SQLite или PostgreSQL, вычисления распараллеливают�
 доверительными интервалами; матрица эффективностей для набора критериев
 выбранного семейства по 3--5 альтернативам; пример конфигурации, документация и модульные тесты,
 проходящие в CI.
+
+\clearpage
